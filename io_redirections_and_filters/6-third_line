@@ -1,2 +1,2 @@
 #!/bin/bash
-( head -n 3 iacta > tmp tail -n 1 tmp rm tmp)
+head -n 3 iacta > tmp & wait %1 & tail -n 1 tmp
