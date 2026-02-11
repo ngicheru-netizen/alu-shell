@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Displays the phrase "To Infity an Beyond" in the terminal in a loop, with  a delay of 2 seconds per iteration, and can be stopped by the user using Ctrl+C
 while true; do
-    echo "To Infity an Beyond"
+    echo "To infity an beyond"
     sleep 2
 done
 
