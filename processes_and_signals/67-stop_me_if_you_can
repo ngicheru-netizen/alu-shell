@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Displays the phrase "To Infity an Beyond" in the terminal in a loop, with  a delay of 2 seconds per iteration, shows a message if there is a signal to stop the process
+
+pkill -f 7-highlander
