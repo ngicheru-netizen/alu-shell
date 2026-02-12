@@ -3,12 +3,12 @@
 PIDFILE="/var/run/myscript.pid"
 echo "$$" > "$PIDFILE"
 cleanup() {
-    [rm -f "$PIDFILE"] && rm -f "$PIDFILE"
+    rm -f "$PIDFILE"
     exit
 }
-trap "I hate the kill command" SIGTERM
-trap "Y U no love me?!" SIGINT
-trap 'cleanup; exit' SIGQUIT
+trap 'echo "I hate the kill command"; cleanup' SIGTERM
+trap 'echo "Y U no love me?!";' SIGINT
+trap 'cleanup' SIGQUIT
 
 while true; do
     echo "To infinity and beyond"
