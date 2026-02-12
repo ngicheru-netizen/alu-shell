@@ -14,6 +14,13 @@ stop_process (){
     rm -f $PIDFILE
     echo "manage_my_process stopped"
 }
+restart_process (){
+    pkill $process
+    rm -f $PIDFILE
+    $process &
+    echo $! > $PIDFILE
+    echo "manage_my_process restarted"
+}
 
 case "$1" in
     start)
@@ -23,9 +30,7 @@ case "$1" in
         stop_process
         ;;
     restart)
-        stop_process
-        start_process
-        echo "manage_my_process restarted"
+        restart_process
         ;;
     *)
     echo "Usage: manage_my_process {start|stop|restart}"
