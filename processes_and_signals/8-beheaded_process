@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 #This script will kill 7-highlander.
+pkill -9 -f 7-highlander
 
-pkill "$ (pgrep -f 7-highlander)"
+
