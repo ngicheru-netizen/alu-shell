@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #one bash script managing another
 PIDFILE="/var/run/my_process.pid"
-process="manage_my_process"
+process="bash manage_my_process"
 
 start_process (){
     $process &
