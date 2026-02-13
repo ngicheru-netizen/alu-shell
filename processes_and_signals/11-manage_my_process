@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 #one bash script managing another
-
-if [ "$1" == "start" ]
+process="./manage_my_process"
+if [ "$1" == "start" ];
 then
-    ./manage_my_process &
+    $process &
     echo $! > /var/run/my_process.pid
     echo "manage_my_process started"
 elif
-    [ "$1" == "stop" ]
+    [ "$1" == "stop" ];
 then
     kill "$(cat /var/run/my_process.pid)"
     rm -f /var/run/my_process.pid
     echo "manage_my_process stopped"
 elif
-    [ "$1" == "restart" ]
+    [ "$1" == "restart" ];
 then
     kill "$(cat /var/run/my_process.pid)"
     rm -f /var/run/my_process.pid
-    ./manage_my_process &
+    $process &
     echo $! > /var/run/my_process.pid
     echo "manage_my_process restarted"
 else
